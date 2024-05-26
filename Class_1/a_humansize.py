@@ -13,7 +13,7 @@ def approximate_size(size, a_kilobyte_is_1024_bytes=True):
 
     '''
     if size < 0:
-        raise ValueError('number must be non-negative')
+        raise ValueError('number must be non-negative')  # Exception if the size is less than zero
 
     multiple = 1024 if a_kilobyte_is_1024_bytes else 1000
     for suffix in SUFFIXES[multiple]:
@@ -21,7 +21,7 @@ def approximate_size(size, a_kilobyte_is_1024_bytes=True):
         if size < multiple:
             return '{0:.1f} {1}'.format(size, suffix)
 
-    raise ValueError('number too large')
+    raise ValueError('number too large') 
 
 if __name__ == '__main__':
     print(approximate_size(1000000000000, False))
@@ -29,7 +29,9 @@ if __name__ == '__main__':
 
 
 # Learning Key Highlights
+# Every function deserves a decent docstring.
 # Functions called Definitions
 # Control Structures
 # print
 # Parameters - optional , Mandatory
+# Indentation is important
